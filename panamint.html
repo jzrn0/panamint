@@ -1,0 +1,274 @@
+<html><head><base href="https://jzrn0.github.io/AmeManager/panamint2.png%20use%20this%20link%20for%20the%20big%20logo%20in%20the%20middle,%20and%20dont%20make%20it%20animated"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ameOS Panamint - A Modern Arch-based Linux Distribution</title>
+<style>
+:root {
+  --primary: #0077b6;
+  --secondary: #023e8a;
+  --accent: #90e0ef;
+  --text: #e5e5e5;
+  --bg: #0a1929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  background: radial-gradient(circle at center, rgba(0,119,182,0.3) 0%, transparent 90%);
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 25px rgba(0,119,182,0.6));
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 35px rgba(0,119,182,0.8));
+  transform: scale(1.03) translateY(-5px);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 1.5rem 0;
+  animation: fadeIn 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 10rem 3rem;
+  background: linear-gradient(to bottom, var(--secondary), var(--bg));
+  position: relative;
+  overflow: hidden;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom right, transparent 49%, var(--secondary) 50%);
+}
+
+.feature-card {
+  background: rgba(144,224,239,0.05);
+  padding: 3.5rem;
+  border-radius: 25px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(144,224,239,0.1);
+  backdrop-filter: blur(20px);
+  transform-origin: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.feature-card:hover {
+  transform: translateY(-20px) scale(1.12);
+  background: rgba(144,224,239,0.12);
+  box-shadow: 0 25px 50px rgba(0,119,182,0.3);
+  z-index: 2;
+}
+
+.feature-card:hover h3 {
+  transform: scale(1.12);
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(144,224,239,0.4);
+}
+
+.feature-card:hover p {
+  transform: scale(1.06);
+}
+
+.feature-card h3 {
+  color: var(--accent);
+  margin-bottom: 1.4rem;
+  font-size: 1.7rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card p {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.8;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: white;
+  padding: 1.4rem 3rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 3.5rem;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(0,119,182,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn:hover {
+  transform: scale(1.07) translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,119,182,0.6);
+}
+
+.download-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.3) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: rotate(45deg);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.download-btn:hover::after {
+  animation: shine 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% { transform: rotate(45deg) translateX(-250%); }
+  100% { transform: rotate(45deg) translateX(250%); }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  background: rgba(10,25,41,0.8);
+  backdrop-filter: blur(25px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 1.2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 0.8rem 0;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+nav a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px rgba(144,224,239,0.4);
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div>
+      <a href="https://discord.gg/CWsE5Uvspp">Community</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img src="https://jzrn0.github.io/AmeManager/panamint2.png" alt="ameOS Logo" class="logo">
+    <p>A modern and powerful Arch-based Linux distribution with good looks, and performance.</p>
+    <a href="https://files.odysen.space/panamint_2024_12_16_ci_roller_x86_64-FjrDDP59LAhr.iso" class="download-btn">Download Latest Release</a>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Arch-based Foundation</h3>
+      <p>Built on the robust Arch Linux base, providing rolling releases and cutting-edge software.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Streamlined Experience</h3>
+      <p>Carefully curated default configurations and tools for a seamless computing experience.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Optimized</h3>
+      <p>Optimized for performance while maintaining good looks.</p>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.feature-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(50px)';
+        card.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(card);
+      });
+
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+          nav.style.transform = 'translateY(0)';
+        } else if (currentScroll > lastScroll) {
+          nav.style.transform = 'translateY(-100%)';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+      });
+    });
+  </script>
+</body></html>
